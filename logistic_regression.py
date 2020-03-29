@@ -73,7 +73,7 @@ def plot_confusion_matrix(yt, preds):
     import seaborn as sn
     plt.figure(figsize=(20, 10))
     sn.heatmap(cm, annot=True, cbar=True, xticklabels=labels, yticklabels=labels) # font size
-    plt.savefig( 'cm_lr.png')
+    plt.savefig('img/cm_lr.png')
     # plt.show()
 
 if __name__ == '__main__':

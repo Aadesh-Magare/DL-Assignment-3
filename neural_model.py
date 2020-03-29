@@ -27,25 +27,27 @@ random_seed = 777
 torch.manual_seed(random_seed)
 np.random.seed(random_seed)
 
-
 class LSTM(nn.Module):
     def __init__(self, vocab_size, embedding_dim, hidden_dim, output_dim, dp):
         super(LSTM, self).__init__()
         self.embd = nn.Embedding(vocab_size, embedding_dim)
         self.proj = nn.Linear(embedding_dim, 300)
         self.dropout = nn.Dropout(dp)
-        self.lstm = nn.LSTM(300, hidden_dim, 3)
+        self.lstm = nn.LSTM(300, hidden_dim, bidirectional=True)
+        # self.gru = nn.GRU(300, hidden_dim, bidirectional=True)
+        # encoder_layer = nn.TransformerEncoderLayer(d_model=300, nhead=3)
+        # self.lstm = nn.TransformerEncoder(encoder_layer, num_layers=3)
         self.relu = nn.ReLU()
         self.out = nn.Sequential(
-            nn.Linear(600, 1024),
+            nn.Linear(1200, 1024),
             self.relu,
             self.dropout,
-            nn.Linear(1024, 1024),
-            self.relu,
-            self.dropout,
-            nn.Linear(1024, 1024),
-            self.relu,
-            self.dropout,
+            # nn.Linear(1024, 1024),
+            # self.relu,
+            # self.dropout,
+            # nn.Linear(1024, 1024),
+            # self.relu,
+            # self.dropout,
             nn.Linear(1024, output_dim)
         )
 
@@ -59,6 +61,7 @@ class LSTM(nn.Module):
         premise = premise.sum(dim = 1)
         hypothesis = hypothesis.sum(dim = 1)
         concat = torch.cat((premise, hypothesis), 1)
+        # print('concat shape', concat.shape)
         return self.out(concat)
 
 def train_one_epoch(model, trainloader, optimizer, device):
@@ -108,10 +111,12 @@ def test(model, testloader):
 
     return np.mean(losses), y_gt, y_pred_label
 
-def evaluate(ds):
+def evaluate():
+    device = torch.device('cpu')
+    ds = dataset.SNLI(bs=bs, device=device)
 
     model = LSTM(ds.vocab_size(), embedding_dim, hidden_dim, ds.output_dim(), dp)
-    model.load_state_dict(torch.load(os.path.join(repo_path, "./models/lstm.pt"), map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load(os.path.join(repo_path, "./models/model_lstm.pt"), map_location=device))
     loss, gt, pred = test(model, ds.test_iter)
     print("\nAccuracy on Test Data : {}\n".format(np.mean(np.array(gt) == np.array(pred))))
 
@@ -121,13 +126,13 @@ def evaluate(ds):
     import seaborn as sn
     plt.figure(figsize=(20, 10))
     sn.heatmap(cm, annot=True, cbar=True, xticklabels=labels, yticklabels=labels) # font size
-    plt.savefig(os.path.join(repo_path, './img/cm_CNN.jpg'))
+    plt.savefig(os.path.join(repo_path, './img/cm_lstm.jpg'))
     # plt.show()
 
 if __name__ == "__main__":
     repo_path = os.path.dirname(os.path.abspath(__file__))
 
-    number_epochs = 60
+    number_epochs = 15
     bs = 512
     valid_size = 0.15
     embedding_dim = 300
@@ -139,11 +144,10 @@ if __name__ == "__main__":
     else:
         device = torch.device('cpu')
 
-    ds =   dataset.SNLI(bs=bs, device=device)
+    ds = dataset.SNLI(bs=bs, device=device)
     model = LSTM(ds.vocab_size(), embedding_dim, hidden_dim, ds.output_dim(), dp)
-    optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-    #scheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.1, patience=0, verbose=True)
+    optimizer = optim.Adam(model.parameters(), lr=0.001)#, weight_decay=1e-4)
+    scheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.1, patience=0, verbose=True)
 
     track_loss = []
     track_acc = []
@@ -154,19 +158,26 @@ if __name__ == "__main__":
         loss = train_one_epoch(model, ds.train_iter, optimizer, device)
         track_loss.append(loss)
         print('Loss: ', loss)
-        if not (i % 5) :
-          model.to(torch.device('cpu'))
-          loss, gt, pred = test(model, ds.dev_iter)
-          acc = np.mean(np.array(gt) == np.array(pred))
-          print("\nAccuracy on Validation Data : {}\n".format(acc))
-        #   scheduler.step(acc)
+        # if not (i % 5) :
+        # model.to(torch.device('cpu'))
+        loss, gt, pred = test(model, ds.dev_iter)
+        acc = np.mean(np.array(gt) == np.array(pred))
+        print("\nAccuracy on Validation Data : {}\n".format(acc))
+        scheduler.step(acc)
 
     # plt.figure()
     # plt.plot(track_loss)
-    # plt.title("training-loss-CNN")
+    # plt.title("training loss NN")
     # plt.savefig(os.path.join(repo_path, "./img/training_loss_cnn.jpg"))
 
-    # torch.save(model.state_dict(), os.path.join(repo_path, "./models/CNN.pt"))
-    # print('Model saved to: ', os.path.join(repo_path, './models/CNN.pt'))
-
     # evaluate(ds) 
+
+def save_model(model):
+    torch.save(model.state_dict(), os.path.join(repo_path, "./models/model_lstm.pt"))
+    print('saved trained model')
+
+def load_model():
+    model = LSTM(ds.vocab_size(), embedding_dim, hidden_dim, ds.output_dim(), dp)
+    model.load_state_dict(torch.load(os.path.join(repo_path, "./models/model_lstm.pt")))
+    return model
+

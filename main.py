@@ -38,9 +38,9 @@ if __name__ == "__main__":
     write_preds(preds, os.path.join(repo_path, 'tfidf.txt'))
     print('Results saved to file', 'tfidf.txt')
 
-    # model = neural_model.load_model()
-    # preds = model.predict(xt)
-    # print('Test Acc LR model:', np.mean(preds == yt))
-    # write_preds(preds, os.path.join(repo_path, 'deep_model.txt'))
-    # print('Results saved to file', '"deep_model.txt')
+    model = neural_model.load_model()
+    preds = model.predict(xt)
+    print('Test Acc LR model:', np.mean(preds == yt))
+    write_preds(preds, os.path.join(repo_path, 'deep_model.txt'))
+    print('Results saved to file', '"deep_model.txt')
 

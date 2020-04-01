@@ -106,8 +106,8 @@ def test(model, testloader):
         losses.append(loss.item())
 
         # Add the labels
-        y_gt += list(batch.label.numpy())
-        y_pred_label += list(y_pred_label_tmp.numpy())
+        y_gt += list(batch.label.cpu().numpy())
+        y_pred_label += list(y_pred_label_tmp.cpu().numpy())
 
     return np.mean(losses), y_gt, y_pred_label
 
@@ -121,7 +121,8 @@ def evaluate():
     print("\nAccuracy on Test Data : {}\n".format(np.mean(np.array(gt) == np.array(pred))))
 
     cm = confusion_matrix(gt, pred)
-    # print(cm)
+    print('Confusion Matrix')
+    print(cm)
     labels = ['-', 'contradiction', 'entailment', 'neutral']
     import seaborn as sn
     plt.figure(figsize=(20, 10))
@@ -129,16 +130,27 @@ def evaluate():
     plt.savefig(os.path.join(repo_path, './img/cm_lstm.jpg'))
     # plt.show()
 
+def save_model(model):
+    torch.save(model.state_dict(), os.path.join(repo_path, "./models/model_lstm.pt"))
+    print('saved trained model')
+
+def load_model():
+    device = torch.device('cpu')
+    ds = dataset.SNLI(bs=bs, device=device)
+    model = LSTM(ds.vocab_size(), embedding_dim, hidden_dim, ds.output_dim(), dp)
+    model.load_state_dict(torch.load(os.path.join(repo_path, "./models/model_lstm.pt"), map_location=device))
+    return model
+
+repo_path = os.path.dirname(os.path.abspath(__file__))
+number_epochs = 15
+bs = 512
+valid_size = 0.15
+embedding_dim = 300
+dp = 0.20
+hidden_dim = 300
+
 if __name__ == "__main__":
-    repo_path = os.path.dirname(os.path.abspath(__file__))
-
-    number_epochs = 15
-    bs = 512
-    valid_size = 0.15
-    embedding_dim = 300
-    dp = 0.20
-    hidden_dim = 300
-
+    
     if torch.cuda.is_available():
         device = torch.device('cuda:0')
     else:
@@ -170,13 +182,5 @@ if __name__ == "__main__":
     # plt.title("training loss NN")
     # plt.savefig(os.path.join(repo_path, "./img/training_loss_cnn.jpg"))
 
-    # evaluate(ds) 
-
-def save_model(model):
-    torch.save(model.state_dict(), os.path.join(repo_path, "./models/model_lstm.pt"))
-    print('saved trained model')
-
-def load_model():
-    model = LSTM(ds.vocab_size(), embedding_dim, hidden_dim, ds.output_dim(), dp)
-    model.load_state_dict(torch.load(os.path.join(repo_path, "./models/model_lstm.pt")))
-    return model
+    save_model()
+    evaluate() 

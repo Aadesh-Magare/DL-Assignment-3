@@ -150,7 +150,7 @@ dp = 0.20
 hidden_dim = 300
 
 if __name__ == "__main__":
-    
+
     if torch.cuda.is_available():
         device = torch.device('cuda:0')
     else:
@@ -181,6 +181,6 @@ if __name__ == "__main__":
     # plt.plot(track_loss)
     # plt.title("training loss NN")
     # plt.savefig(os.path.join(repo_path, "./img/training_loss_cnn.jpg"))
-
+    
     save_model()
     evaluate() 

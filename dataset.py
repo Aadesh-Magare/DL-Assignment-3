@@ -41,7 +41,7 @@ class SNLI():
 	def __init__(self, bs, device):
 		self.inputs = data.Field(lower=True, batch_first = True)
 		self.answers = data.Field(sequential=False, unk_token = None, is_target = True)
-		self.train, self.dev, self.test = datasets.SNLI.splits(self.inputs, self.answers)
+		self.train, self.dev, self.test = datasets.SNLI.splits(self.inputs, self.answers, root='data')
 		self.inputs.build_vocab(self.train, self.dev)
 		self.answers.build_vocab(self.train)
 		self.train_iter, self.dev_iter, self.test_iter = data.Iterator.splits((self.train, self.dev, self.test), 

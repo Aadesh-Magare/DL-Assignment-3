@@ -6,20 +6,20 @@ from torchtext import data
 from torchtext import datasets
 
 def load_data():
-    if not os.path.exists('./data/snli_1.0'):
-        if not os.path.exists('./data/snli_1.0.zip'):
+    if not os.path.exists('./data/snli/snli_1.0'):
+        if not os.path.exists('./data/snli/snli_1.0.zip'):
             print('Downloading')
             r = requests.get('https://nlp.stanford.edu/projects/snli/snli_1.0.zip', allow_redirects=True)
-            open('./data/snli_1.0.zip', 'wb').write(r.content)
-        os.system('unzip ./data/snli_1.0.zip -d ./data/')
+            open('./data/snli/snli_1.0.zip', 'wb').write(r.content)
+        os.system('unzip ./data/snli/snli_1.0.zip -d ./data/snli/')
 
-    with open('./data/snli_1.0/snli_1.0_train.jsonl') as f:
+    with open('./data/snli/snli_1.0/snli_1.0_train.jsonl') as f:
         train = np.array(list(map(lambda x: {k:v for k, v in json.loads(x).items() if k in ['sentence1', 'sentence2', 'gold_label']}, f.readlines())))
 
-    with open('./data/snli_1.0/snli_1.0_dev.jsonl') as f:
+    with open('./data/snli/snli_1.0/snli_1.0_dev.jsonl') as f:
         dev = np.array(list(map(lambda x: {k:v for k, v in json.loads(x).items() if k in ['sentence1', 'sentence2', 'gold_label']}, f.readlines())))
 
-    with open('./data/snli_1.0/snli_1.0_test.jsonl') as f:
+    with open('./data/snli/snli_1.0/snli_1.0_test.jsonl') as f:
         test = np.array(list(map(lambda x: {k:v for k, v in json.loads(x).items() if k in ['sentence1', 'sentence2', 'gold_label']}, f.readlines())))
 
     return train, dev, test

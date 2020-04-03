@@ -124,7 +124,12 @@ def evaluate():
     print('Confusion Matrix')
     print(cm)
     labels = ['-', 'contradiction', 'entailment', 'neutral']
-    import seaborn as sn
+    try:
+        import seaborn as sn
+    except ImportError:
+        print('seaborn not found. attempt installing.')
+        os.system('pip install seaborn')
+
     plt.figure(figsize=(20, 10))
     sn.heatmap(cm, annot=True, cbar=True, xticklabels=labels, yticklabels=labels) # font size
     plt.savefig(os.path.join(repo_path, './img/cm_lstm.jpg'))
@@ -165,6 +170,7 @@ if __name__ == "__main__":
     track_acc = []
     print('Training LSTM Model')
 
+    best_acc = 0
     for i in tqdm(range(1, number_epochs+1)):
         model.to(device)
         loss = train_one_epoch(model, ds.train_iter, optimizer, device)
@@ -175,6 +181,9 @@ if __name__ == "__main__":
         loss, gt, pred = test(model, ds.dev_iter)
         acc = np.mean(np.array(gt) == np.array(pred))
         print("\nAccuracy on Validation Data : {}\n".format(acc))
+        if acc > best_acc:
+            best_acc = acc
+            save_model(model)
         scheduler.step(acc)
 
     # plt.figure()
@@ -182,5 +191,5 @@ if __name__ == "__main__":
     # plt.title("training loss NN")
     # plt.savefig(os.path.join(repo_path, "./img/training_loss_cnn.jpg"))
     
-    save_model(model)
+    # save_model(model)
     evaluate() 

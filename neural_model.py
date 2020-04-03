@@ -146,7 +146,7 @@ number_epochs = 15
 bs = 512
 valid_size = 0.15
 embedding_dim = 300
-dp = 0.20
+dp = 0.15
 hidden_dim = 300
 
 if __name__ == "__main__":
@@ -182,5 +182,5 @@ if __name__ == "__main__":
     # plt.title("training loss NN")
     # plt.savefig(os.path.join(repo_path, "./img/training_loss_cnn.jpg"))
     
-    save_model()
+    save_model(model)
     evaluate() 

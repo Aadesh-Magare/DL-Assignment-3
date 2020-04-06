@@ -118,21 +118,23 @@ def evaluate():
     model = LSTM(ds.vocab_size(), embedding_dim, hidden_dim, ds.output_dim(), dp)
     model.load_state_dict(torch.load(os.path.join(repo_path, "./models/model_lstm.pt"), map_location=device))
     loss, gt, pred = test(model, ds.test_iter)
-    print("\nAccuracy on Test Data : {}\n".format(np.mean(np.array(gt) == np.array(pred))))
+    print("\nTest Acc LSTM model: {}\n".format(np.mean(np.array(gt) == np.array(pred))))
+    return pred
+    # to plot confusion matrix
+    # cm = confusion_matrix(gt, pred)
+    # print('Confusion Matrix')
+    # print(cm)
+    # labels = ['-', 'contradiction', 'entailment', 'neutral']
+    # try:
+    #     import seaborn as sn
+    # except ImportError:
+    #     print('seaborn not found. attempt installing.')
+    #     os.system('pip install seaborn')
+    #     import seaborn as sn
 
-    cm = confusion_matrix(gt, pred)
-    print('Confusion Matrix')
-    print(cm)
-    labels = ['-', 'contradiction', 'entailment', 'neutral']
-    try:
-        import seaborn as sn
-    except ImportError:
-        print('seaborn not found. attempt installing.')
-        os.system('pip install seaborn')
-
-    plt.figure(figsize=(20, 10))
-    sn.heatmap(cm, annot=True, cbar=True, xticklabels=labels, yticklabels=labels) # font size
-    plt.savefig(os.path.join(repo_path, './img/cm_lstm.jpg'))
+    # plt.figure(figsize=(20, 10))
+    # sn.heatmap(cm, annot=True, cbar=True, xticklabels=labels, yticklabels=labels) # font size
+    # plt.savefig(os.path.join(repo_path, './img/cm_lstm.jpg'))
     # plt.show()
 
 def save_model(model):
@@ -190,6 +192,6 @@ if __name__ == "__main__":
     # plt.plot(track_loss)
     # plt.title("training loss NN")
     # plt.savefig(os.path.join(repo_path, "./img/training_loss_cnn.jpg"))
-    
+    print('Training Complete')
     # save_model(model)
-    evaluate() 
+    # evaluate() 

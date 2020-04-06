@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.7)  29 MAR 2020 13:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.7)  6 APR 2020 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -753,10 +753,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 144--145
  []
 
 [4 <./loss_lstm.png>]
-<cm_NN.png, id=29, 1445.4pt x 722.7pt>
-File: cm_NN.png Graphic file (type png)
-<use cm_NN.png>
-Package pdftex.def Info: cm_NN.png  used on input line 194.
+<cm_lstm.png, id=29, 1445.4pt x 722.7pt>
+File: cm_lstm.png Graphic file (type png)
+<use cm_lstm.png>
+Package pdftex.def Info: cm_lstm.png  used on input line 194.
 (pdftex.def)             Requested size: 588.85963pt x 294.4232pt.
 
 Overfull \hbox (135.89174pt too wide) in paragraph at lines 194--195
@@ -764,14 +764,14 @@ Overfull \hbox (135.89174pt too wide) in paragraph at lines 194--195
  []
 
 No file "Deep Learning Report 3".bbl.
-[5 <./cm_NN.png>] (./Deep Learning Report 3.aux)
+[5 <./cm_lstm.png>] (./Deep Learning Report 3.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  15788 strings out of 492649
- 297919 string characters out of 6129623
+ 297929 string characters out of 6129623
  347190 words of memory out of 5000000
  19351 multiletter control sequences out of 15000+600000
  11503 words of font info for 45 fonts, out of 8000000 for 9000
@@ -782,7 +782,7 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
 usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
 r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on "Deep Learning Report 3.pdf" (5 pages, 190682 bytes).
+Output written on "Deep Learning Report 3.pdf" (5 pages, 190836 bytes).
 PDF statistics:
  51 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream

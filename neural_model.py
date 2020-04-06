@@ -39,7 +39,7 @@ class LSTM(nn.Module):
         # self.lstm = nn.TransformerEncoder(encoder_layer, num_layers=3)
         self.relu = nn.ReLU()
         self.out = nn.Sequential(
-            nn.Linear(1200, 1024),
+            nn.Linear(1200, 1000),
             self.relu,
             self.dropout,
             # nn.Linear(1024, 1024),
@@ -48,7 +48,7 @@ class LSTM(nn.Module):
             # nn.Linear(1024, 1024),
             # self.relu,
             # self.dropout,
-            nn.Linear(1024, output_dim)
+            nn.Linear(1000, output_dim)
         )
 
     def forward(self, batch):
@@ -118,7 +118,7 @@ def evaluate():
     model = LSTM(ds.vocab_size(), embedding_dim, hidden_dim, ds.output_dim(), dp)
     model.load_state_dict(torch.load(os.path.join(repo_path, "./models/model_lstm.pt"), map_location=device))
     loss, gt, pred = test(model, ds.test_iter)
-    print("\nTest Acc LSTM model: {}\n".format(np.mean(np.array(gt) == np.array(pred))))
+    print("Test Acc LSTM model: {}".format(np.mean(np.array(gt) == np.array(pred))))
     return pred
     # to plot confusion matrix
     # cm = confusion_matrix(gt, pred)

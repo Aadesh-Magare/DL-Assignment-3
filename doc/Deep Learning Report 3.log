@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.7)  6 APR 2020 20:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.7)  21 APR 2020 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -718,11 +718,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2 <./loss_lr.png>]
-<cm_lr.jpg, id=20, 1445.4pt x 722.7pt>
-File: cm_lr.jpg Graphic file (type jpg)
-<use cm_lr.jpg>
-Package pdftex.def Info: cm_lr.jpg  used on input line 113.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+<../img/cm_lr.png, id=16, 1445.4pt x 722.7pt>
+File: ../img/cm_lr.png Graphic file (type png)
+<use ../img/cm_lr.png>
+Package pdftex.def Info: ../img/cm_lr.png  used on input line 113.
 (pdftex.def)             Requested size: 588.85963pt x 294.4232pt.
 
 Overfull \hbox (135.89174pt too wide) in paragraph at lines 113--114
@@ -730,62 +737,66 @@ Overfull \hbox (135.89174pt too wide) in paragraph at lines 113--114
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2 <./loss_lr.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
 <loss_lstm.png, id=21, 433.62pt x 289.08pt>
 File: loss_lstm.png Graphic file (type png)
 <use loss_lstm.png>
-Package pdftex.def Info: loss_lstm.png  used on input line 131.
+Package pdftex.def Info: loss_lstm.png  used on input line 130.
 (pdftex.def)             Requested size: 385.02547pt x 256.69812pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
-[3 <./cm_lr.jpg>]
+[3 <../img/cm_lr.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
 [4 <./loss_lstm.png>]
-<cm_lstm.png, id=29, 1445.4pt x 722.7pt>
-File: cm_lstm.png Graphic file (type png)
-<use cm_lstm.png>
-Package pdftex.def Info: cm_lstm.png  used on input line 194.
+<../img/cm_lstm.jpg, id=30, 1445.4pt x 722.7pt>
+File: ../img/cm_lstm.jpg Graphic file (type jpg)
+<use ../img/cm_lstm.jpg>
+Package pdftex.def Info: ../img/cm_lstm.jpg  used on input line 194.
 (pdftex.def)             Requested size: 588.85963pt x 294.4232pt.
 
 Overfull \hbox (135.89174pt too wide) in paragraph at lines 194--195
 [][] 
  []
 
+[5 <../img/cm_lstm.jpg>]
 No file "Deep Learning Report 3".bbl.
-[5 <./cm_lstm.png>] (./Deep Learning Report 3.aux)
+[6] (./Deep Learning Report 3.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15788 strings out of 492649
- 297929 string characters out of 6129623
- 347190 words of memory out of 5000000
+ 15789 strings out of 492649
+ 297992 string characters out of 6129623
+ 348190 words of memory out of 5000000
  19351 multiletter control sequences out of 15000+600000
  11503 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,10n,54p,587b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,10n,54p,728b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
 usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
 r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on "Deep Learning Report 3.pdf" (5 pages, 190836 bytes).
+Output written on "Deep Learning Report 3.pdf" (6 pages, 183707 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

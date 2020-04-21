@@ -1,3 +1,4 @@
+#%%
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
@@ -48,10 +49,10 @@ def main():
     preds = clf.predict(xd)
     print('Dev Acc:', np.mean(preds == yd))
 
-    xt, yt = dataset.prepare_dataset(test)
+    xt, yt = dataset.prepare_dataset(test, remove_no_labels=True)
     preds = clf.predict(xt)
     print('Test Acc:', np.mean(preds == yt))
-    
+
     save_model(clf)
 
     plot_confusion_matrix(yt, preds)
@@ -67,9 +68,9 @@ def load_model():
     return clf
 
 def plot_confusion_matrix(yt, preds):
-    cm = confusion_matrix(yt, preds)
+    cm = confusion_matrix(yt, preds, normalize='pred')
     print(cm)
-    labels = ['-', 'contradiction', 'entailment', 'neutral']
+    labels = ['contradiction', 'entailment', 'neutral']
     import seaborn as sn
     plt.figure(figsize=(20, 10))
     sn.heatmap(cm, annot=True, cbar=True, xticklabels=labels, yticklabels=labels) # font size

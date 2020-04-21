@@ -71,7 +71,7 @@ The training data consists of two sentences and a corresponding label. We first 
 \end{center}
 \end{figure}
 
-	Next we'll explore some architectural changes in the model to achieve better performance. We'll pre-process the input to better differentiate between the premise and hypothesis sentences. Each word from premise is appended with token 's1\_' while each word from hypothesis is appended with token 's2\_'. Following the pre-processing the same model gives a validation accuracy of \textbf{64.61\%}. 
+	Next we'll explore some architectural changes in the model to achieve better performance. Starting with pre-processing, we'll pre-process the input to better differentiate between the premise and hypothesis. Each word from premise is appended with token 's1\_' while each word from hypothesis is appended with token 's2\_'. The intuition behind the approach is to have two different vocabularies, separate for premise and hypothesis, allowing to capture different meanings of the word depending on whether it appears in premise or hypothesis. Following the pre-processing the same model gives a validation accuracy of \textbf{64.61\%} i.e. an increase of around \textbf{9.5\%}.
 
 Then We'll try removing the stop words which is standard practice in NLP, however it gives no improvement in model performance but further decreases the accuracy by 0.5\%. 
 
@@ -106,16 +106,15 @@ Grid Search is used for searching optimal hyper parameters. The resultant model 
 \label{table:2}
 \end{table}
 
-Finally we take the best performing model with tuned hyper parameters and test the performance on test set. Here it gives \textbf{accuracy of 66.41\%}. Figure \ref{mlpcm} shows the confusion matrix for test data. The dataset has several examples without label i.e. the corresponding label is '-'. Removing such examples from test set gives slightly better performance of \textbf{67.59\%}. However the confusion matrix shows the results without removing such examples. First row and column of confusion matrix shows such label less examples.
-	
+Finally we take the best performing model with tuned hyper parameters and test the performance on test set. Here it gives \textbf{accuracy of 66.41\%}. Figure \ref{mlpcm} shows the confusion matrix for test data. The dataset has several examples without label i.e. the corresponding label is '-'. Removing such examples from test set gives slightly better performance of \textbf{67.59\%}. The confusion matrix shows the results after removing such examples. \\
+
 \begin{figure}[h!]
 %\begin{center}
-	\includegraphics[width=1.3\linewidth]{cm_lr.jpg}
+	\includegraphics[width=1.3\linewidth]{../img/cm_lr.png}
 	\caption{Logistic Regression Confusion Matrix}
 	\label{mlpcm}
 %\end{center}
 \end{figure}
-
 
 
 \subsection{Deep Neural Network based approaches}
@@ -137,6 +136,7 @@ Starting with simple LSTM based model. We'll have an embedding layer followed by
 
 	Next we'll increase the capacity of network by adding additional layers and model complexity. Fully connected layers before output layer of the model can be increased for more model capacity. We'll vary the fully connected layers from 1 to 3 before the output layer. \\
 	
+
 	Further the LSTM layer used can be enhanced with stacked LSTM making it 2 or 3 layer LSTM. Apart from this we can use BiLSTM in place of simple LSTM layer. Apart from this we'll experiment with the use of pre-trained word embeddings like Glove. Apart from LSTM, the core model can be changed to GRU or a TransformerEncoder. Due to lack of training resources we're restricting the training to 10 epocs thus a very large model like transformer is not able to show expected performance and the performance is less than that of LSTM.
 	
 	We'll choose the best performing architecture giving validation accuracy of \textbf{77.47\%} out of this for further experiments involving hyper parameter tuning.
@@ -191,12 +191,13 @@ Finally we take the best performing model and test the performance on actual tes
 
 \begin{figure}[h!]
 %\begin{center}
-	\includegraphics[width=1.3\linewidth]{cm_lstm.png}
+	\includegraphics[width=1.3\linewidth]{../img/cm_lstm.jpg}
 	\caption{LSTM Confusion Matrix}
 	\label{nncm}
 %\end{center}
 \end{figure}
 
+\pagebreak
 
 Table \ref{table:3} shows the performance of both logistic regression based model and LSTM based model on the actual test dataset. LSTM model clearly performs better than logistic regression model with \textbf{11\%} better accuracy, which clearly shows it's superiority for textual data and preserving long term dependency.
 

@@ -45,7 +45,7 @@ class SNLI():
 		self.inputs.build_vocab(self.train, self.dev)
 		self.answers.build_vocab(self.train)
 		self.train_iter, self.dev_iter, self.test_iter = data.Iterator.splits((self.train, self.dev, self.test), 
-            batch_size=bs, device=device)
+            batch_size=bs, device=device, shuffle=False, sort=False)
 
 	def vocab_size(self):
 		return len(self.inputs.vocab)

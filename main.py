@@ -31,7 +31,6 @@ if __name__ == "__main__":
 
     train, dev, test = dataset.load_data()
     xt, yt = dataset.prepare_dataset(test, remove_no_labels=True)
-
     model = logistic_regression.load_model()
     preds = model.predict(xt)
     print('Test Acc LR model:', np.mean(preds == yt))
@@ -41,6 +40,6 @@ if __name__ == "__main__":
     preds = neural_model.evaluate()
     labels = ['entailment', 'contradiction', 'neutral']
     preds = [labels[p] for p in preds]
+    # print('Test Acc DM model:', np.mean(preds == yt))
     write_preds(preds, os.path.join(repo_path, 'deep_model.txt'))
     print('Results saved to file', 'deep_model.txt')
-

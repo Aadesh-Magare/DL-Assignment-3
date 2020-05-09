@@ -27,6 +27,13 @@ random_seed = 777
 torch.manual_seed(random_seed)
 np.random.seed(random_seed)
 
+number_epochs = 15
+bs = 512
+valid_size = 0.15
+embedding_dim = 300
+dp = 0.15
+hidden_dim = 300
+
 class LSTM(nn.Module):
     def __init__(self, vocab_size, embedding_dim, hidden_dim, output_dim, dp):
         super(LSTM, self).__init__()
@@ -111,12 +118,12 @@ def test(model, testloader):
 
     return np.mean(losses), y_gt, y_pred_label
 
-def evaluate():
+def evaluate(repo_path):
     device = torch.device('cpu')
-    ds = dataset.SNLI(bs=bs, device=device)
+    ds = dataset.SNLI(bs=bs, device=device, repo_path=repo_path)
 
     model = LSTM(ds.vocab_size(), embedding_dim, hidden_dim, ds.output_dim(), dp)
-    model.load_state_dict(torch.load(os.path.join(repo_path, "./models/model_lstm.pt"), map_location=device))
+    model.load_state_dict(torch.load(os.path.join(repo_path, "models/model_lstm.pt"), map_location=device))
     loss, gt, pred = test(model, ds.test_iter)
     print("Test Acc LSTM model: {}".format(np.mean(np.array(gt) == np.array(pred))))
     return pred
@@ -134,36 +141,27 @@ def evaluate():
 
     # plt.figure(figsize=(20, 10))
     # sn.heatmap(cm, annot=True, cbar=True, xticklabels=labels, yticklabels=labels) # font size
-    # plt.savefig(os.path.join(repo_path, './img/cm_lstm.jpg'))
+    # plt.savefig(os.path.join(repo_path, 'img/cm_lstm.jpg'))
     # plt.show()
 
-def save_model(model):
-    torch.save(model.state_dict(), os.path.join(repo_path, "./models/model_lstm.pt"))
+def save_model(model, repo_path):
+    torch.save(model.state_dict(), os.path.join(repo_path, "models/model_lstm.pt"))
     print('saved trained model')
 
-def load_model():
+def load_model(repo_path):
     device = torch.device('cpu')
-    ds = dataset.SNLI(bs=bs, device=device)
+    ds = dataset.SNLI(bs=bs, device=device, repo_path=repo_path)
     model = LSTM(ds.vocab_size(), embedding_dim, hidden_dim, ds.output_dim(), dp)
-    model.load_state_dict(torch.load(os.path.join(repo_path, "./models/model_lstm.pt"), map_location=device))
+    model.load_state_dict(torch.load(os.path.join(repo_path, "models/model_lstm.pt"), map_location=device))
     return model
 
-repo_path = os.path.dirname(os.path.abspath(__file__))
-number_epochs = 15
-bs = 512
-valid_size = 0.15
-embedding_dim = 300
-dp = 0.15
-hidden_dim = 300
-
-if __name__ == "__main__":
-
+def main(repo_path):
     if torch.cuda.is_available():
         device = torch.device('cuda:0')
     else:
         device = torch.device('cpu')
 
-    ds = dataset.SNLI(bs=bs, device=device)
+    ds = dataset.SNLI(bs=bs, device=device, repo_path=repo_path)
     model = LSTM(ds.vocab_size(), embedding_dim, hidden_dim, ds.output_dim(), dp)
     optimizer = optim.Adam(model.parameters(), lr=0.001)#, weight_decay=1e-4)
     scheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.1, patience=0, verbose=True)
@@ -185,13 +183,17 @@ if __name__ == "__main__":
         print("\nAccuracy on Validation Data : {}\n".format(acc))
         if acc > best_acc:
             best_acc = acc
-            save_model(model)
+            save_model(model, repo_path)
         scheduler.step(acc)
 
     # plt.figure()
     # plt.plot(track_loss)
     # plt.title("training loss NN")
-    # plt.savefig(os.path.join(repo_path, "./img/training_loss_cnn.jpg"))
+    # plt.savefig(os.path.join(repo_path, "img/training_loss_nn.jpg"))
     print('Training Complete')
-    # save_model(model)
-    # evaluate() 
+    save_model(model, repo_path)
+    # evaluate(repo_path) 
+
+if __name__ == "__main__":
+    repo_path = os.path.dirname(os.path.abspath(__file__))
+    main(repo_path)

@@ -5,21 +5,22 @@ import sys
 from torchtext import data
 from torchtext import datasets
 
-def load_data():
-    if not os.path.exists('./data/snli/snli_1.0'):
-        if not os.path.exists('./data/snli/snli_1.0.zip'):
+def load_data(repo_path):
+    
+    if not os.path.exists(os.path.join(repo_path, 'data/snli/snli_1.0')):
+        if not os.path.exists(os.path.join(repo_path, 'data/snli/snli_1.0.zip')):
             print('Downloading')
             r = requests.get('https://nlp.stanford.edu/projects/snli/snli_1.0.zip', allow_redirects=True)
-            open('./data/snli/snli_1.0.zip', 'wb').write(r.content)
-        os.system('unzip ./data/snli/snli_1.0.zip -d ./data/snli/')
+            open(os.path.join(repo_path, 'data/snli/snli_1.0.zip'), 'wb').write(r.content)
+        os.system(f'unzip {os.path.join(repo_path, "data/snli/snli_1.0.zip")} -d {os.path.join(repo_path, "data/snli/")}')
 
-    with open('./data/snli/snli_1.0/snli_1.0_train.jsonl') as f:
+    with open(os.path.join(repo_path, 'data/snli/snli_1.0/snli_1.0_train.jsonl')) as f:
         train = np.array(list(map(lambda x: {k:v for k, v in json.loads(x).items() if k in ['sentence1', 'sentence2', 'gold_label']}, f.readlines())))
 
-    with open('./data/snli/snli_1.0/snli_1.0_dev.jsonl') as f:
+    with open(os.path.join(repo_path, 'data/snli/snli_1.0/snli_1.0_dev.jsonl')) as f:
         dev = np.array(list(map(lambda x: {k:v for k, v in json.loads(x).items() if k in ['sentence1', 'sentence2', 'gold_label']}, f.readlines())))
 
-    with open('./data/snli/snli_1.0/snli_1.0_test.jsonl') as f:
+    with open(os.path.join(repo_path, 'data/snli/snli_1.0/snli_1.0_test.jsonl')) as f:
         test = np.array(list(map(lambda x: {k:v for k, v in json.loads(x).items() if k in ['sentence1', 'sentence2', 'gold_label']}, f.readlines())))
 
     return train, dev, test
@@ -38,10 +39,10 @@ def prepare_dataset(data, remove_no_labels=False):
     return x, y
 
 class SNLI():
-	def __init__(self, bs, device):
+	def __init__(self, bs, device, repo_path):
 		self.inputs = data.Field(lower=True, batch_first = True)
 		self.answers = data.Field(sequential=False, unk_token = None, is_target = True)
-		self.train, self.dev, self.test = datasets.SNLI.splits(self.inputs, self.answers, root='data')
+		self.train, self.dev, self.test = datasets.SNLI.splits(self.inputs, self.answers, root= os.path.join(repo_path, 'data'))
 		self.inputs.build_vocab(self.train, self.dev)
 		self.answers.build_vocab(self.train)
 		self.train_iter, self.dev_iter, self.test_iter = data.Iterator.splits((self.train, self.dev, self.test), 

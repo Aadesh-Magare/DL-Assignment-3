@@ -11,6 +11,7 @@ import pickle
 import numpy as np
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
+import os
 
 stemmer = SnowballStemmer("english", ignore_stopwords=False)
 class StemmedCountVectorizer(CountVectorizer):
@@ -42,8 +43,8 @@ def training(data):
     # print(clf.cv_results_)
     return clf
 
-def main():
-    train, dev, test = dataset.load_data()
+def main(repo_path):
+    train, dev, test = dataset.load_data(repo_path)
     clf = training(train)
     xd, yd = dataset.prepare_dataset(dev)
     preds = clf.predict(xd)
@@ -53,29 +54,30 @@ def main():
     preds = clf.predict(xt)
     print('Test Acc:', np.mean(preds == yt))
 
-    save_model(clf)
+    save_model(clf, repo_path)
 
-    plot_confusion_matrix(yt, preds)
+    plot_confusion_matrix(yt, preds, repo_path)
 
-def save_model(model):
-    with open('models/model_lr.pickl', 'wb') as f:
+def save_model(model, repo_path):
+    with open(os.path.join(repo_path, 'models/model_lr.pickl'), 'wb') as f:
         pickle.dump(model, f)
     print('saved trained model')
 
-def load_model():
-    with open('models/model_lr.pickl', 'rb') as f:
+def load_model(repo_path):
+    with open(os.path.join(repo_path, 'models/model_lr.pickl'), 'rb') as f:
         clf = pickle.load(f)
     return clf
 
-def plot_confusion_matrix(yt, preds):
+def plot_confusion_matrix(yt, preds, repo_path):
     cm = confusion_matrix(yt, preds, normalize='pred')
     print(cm)
     labels = ['contradiction', 'entailment', 'neutral']
     import seaborn as sn
     plt.figure(figsize=(20, 10))
     sn.heatmap(cm, annot=True, cbar=True, xticklabels=labels, yticklabels=labels) # font size
-    plt.savefig('img/cm_lr.png')
+    plt.savefig(os.path.join(repo_path, 'img/cm_lr.png'))
     # plt.show()
 
 if __name__ == '__main__':
-    main()
+    repo_path = os.path.dirname(os.path.abspath(__file__))
+    main(repo_path)

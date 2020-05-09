@@ -29,15 +29,15 @@ def write_preds(preds, filename):
 if __name__ == "__main__":
     repo_path = os.path.dirname(os.path.abspath(__file__))
 
-    train, dev, test = dataset.load_data()
+    train, dev, test = dataset.load_data(repo_path)
     xt, yt = dataset.prepare_dataset(test, remove_no_labels=True)
-    model = logistic_regression.load_model()
+    model = logistic_regression.load_model(repo_path)
     preds = model.predict(xt)
     print('Test Acc LR model:', np.mean(preds == yt))
     write_preds(preds, os.path.join(repo_path, 'tfidf.txt'))
     print('Results saved to file', 'tfidf.txt')
 
-    preds = neural_model.evaluate()
+    preds = neural_model.evaluate(repo_path)
     labels = ['entailment', 'contradiction', 'neutral']
     preds = [labels[p] for p in preds]
     # print('Test Acc DM model:', np.mean(preds == yt))

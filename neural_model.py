@@ -106,8 +106,8 @@ def test(model, testloader):
         losses.append(loss.item())
 
         # Add the labels
-        y_gt += list(batch.label.detach().numpy())
-        y_pred_label += list(y_pred_label_tmp.detach().numpy())
+        y_gt += list(batch.label.cpu().detach().numpy())
+        y_pred_label += list(y_pred_label_tmp.cpu().detach().numpy())
 
     return np.mean(losses), y_gt, y_pred_label
 

@@ -31,12 +31,15 @@ def load_data(repo_path):
 #     return x, y
 
 def prepare_dataset(data, remove_no_labels=False):
+    extra = None
+    if remove_no_labels:
+        extra = [i for i, x in enumerate(data) if x['gold_label'] == '-' ]
     if remove_no_labels:
         data = list(filter(lambda x: x['gold_label'] != '-', data))
     x = np.array(list(map(lambda x: ' '.join(['s1_' + s for s in x['sentence1'].split(' ')]) + ' '.join([' s2_' + s for s in x['sentence2'].split(' ')]), data)))
     y = np.array(list(map(lambda x: x['gold_label'], data)))
 
-    return x, y
+    return x, y, extra
 
 class SNLI():
 	def __init__(self, bs, device, repo_path):

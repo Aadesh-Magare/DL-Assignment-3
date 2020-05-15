@@ -44,6 +44,7 @@ contradiction
 contradiction
 contradiction
 neutral
+neutral
 entailment
 entailment
 neutral
@@ -104,6 +105,7 @@ entailment
 contradiction
 entailment
 entailment
+neutral
 entailment
 entailment
 entailment
@@ -120,6 +122,7 @@ contradiction
 entailment
 neutral
 entailment
+neutral
 contradiction
 contradiction
 entailment
@@ -196,6 +199,7 @@ contradiction
 entailment
 neutral
 neutral
+neutral
 contradiction
 contradiction
 neutral
@@ -365,6 +369,7 @@ neutral
 entailment
 entailment
 contradiction
+neutral
 contradiction
 entailment
 neutral
@@ -561,6 +566,7 @@ neutral
 contradiction
 neutral
 neutral
+neutral
 entailment
 contradiction
 entailment
@@ -636,6 +642,7 @@ neutral
 entailment
 neutral
 entailment
+neutral
 entailment
 neutral
 neutral
@@ -709,6 +716,7 @@ entailment
 contradiction
 entailment
 entailment
+neutral
 contradiction
 neutral
 contradiction
@@ -733,6 +741,7 @@ entailment
 contradiction
 entailment
 neutral
+neutral
 entailment
 entailment
 contradiction
@@ -773,6 +782,7 @@ entailment
 neutral
 entailment
 neutral
+neutral
 entailment
 neutral
 entailment
@@ -857,6 +867,7 @@ neutral
 neutral
 entailment
 contradiction
+neutral
 entailment
 neutral
 entailment
@@ -870,6 +881,7 @@ contradiction
 entailment
 neutral
 entailment
+neutral
 entailment
 contradiction
 contradiction
@@ -1042,6 +1054,7 @@ contradiction
 entailment
 entailment
 entailment
+neutral
 entailment
 neutral
 entailment
@@ -1064,6 +1077,7 @@ contradiction
 contradiction
 entailment
 entailment
+neutral
 contradiction
 neutral
 contradiction
@@ -1086,6 +1100,7 @@ contradiction
 contradiction
 entailment
 entailment
+neutral
 entailment
 neutral
 entailment
@@ -1119,6 +1134,7 @@ entailment
 contradiction
 entailment
 entailment
+neutral
 contradiction
 entailment
 neutral
@@ -1219,6 +1235,7 @@ contradiction
 neutral
 entailment
 contradiction
+neutral
 entailment
 neutral
 neutral
@@ -1233,6 +1250,7 @@ contradiction
 contradiction
 neutral
 neutral
+neutral
 contradiction
 entailment
 neutral
@@ -1258,6 +1276,7 @@ neutral
 entailment
 neutral
 entailment
+neutral
 neutral
 neutral
 entailment
@@ -1326,22 +1345,26 @@ contradiction
 contradiction
 contradiction
 neutral
+neutral
 entailment
 contradiction
 contradiction
 entailment
 neutral
 neutral
+neutral
 contradiction
 contradiction
 entailment
 entailment
+neutral
 entailment
 entailment
 entailment
 contradiction
 entailment
 contradiction
+neutral
 entailment
 contradiction
 neutral
@@ -1433,8 +1456,10 @@ neutral
 entailment
 neutral
 entailment
+neutral
 neutral
 neutral
+neutral
 entailment
 contradiction
 entailment
@@ -1457,7 +1482,9 @@ contradiction
 contradiction
 neutral
 neutral
+neutral
 contradiction
+neutral
 contradiction
 neutral
 contradiction
@@ -1465,6 +1492,7 @@ entailment
 contradiction
 entailment
 neutral
+neutral
 entailment
 entailment
 neutral
@@ -1506,6 +1534,7 @@ contradiction
 neutral
 neutral
 neutral
+neutral
 entailment
 entailment
 entailment
@@ -1522,6 +1551,7 @@ contradiction
 entailment
 entailment
 contradiction
+neutral
 contradiction
 neutral
 neutral
@@ -1531,6 +1561,7 @@ contradiction
 contradiction
 entailment
 contradiction
+neutral
 contradiction
 contradiction
 entailment
@@ -1780,6 +1811,7 @@ entailment
 neutral
 entailment
 contradiction
+neutral
 entailment
 neutral
 entailment
@@ -1846,6 +1878,7 @@ contradiction
 neutral
 entailment
 contradiction
+neutral
 entailment
 neutral
 contradiction
@@ -1871,6 +1904,7 @@ contradiction
 entailment
 entailment
 contradiction
+neutral
 entailment
 neutral
 neutral
@@ -1978,6 +2012,7 @@ entailment
 neutral
 entailment
 entailment
+neutral
 neutral
 neutral
 entailment
@@ -2031,6 +2066,7 @@ neutral
 neutral
 entailment
 neutral
+neutral
 entailment
 neutral
 entailment
@@ -2077,11 +2113,13 @@ neutral
 neutral
 neutral
 neutral
+neutral
 entailment
 contradiction
 neutral
 neutral
 entailment
+neutral
 entailment
 neutral
 neutral
@@ -2110,10 +2148,12 @@ contradiction
 entailment
 entailment
 entailment
+neutral
 contradiction
 entailment
 contradiction
 neutral
+neutral
 contradiction
 entailment
 neutral
@@ -2159,6 +2199,7 @@ entailment
 contradiction
 contradiction
 entailment
+neutral
 neutral
 entailment
 neutral
@@ -2307,9 +2348,11 @@ entailment
 contradiction
 contradiction
 neutral
+neutral
 contradiction
 contradiction
 neutral
+neutral
 contradiction
 contradiction
 neutral
@@ -2320,6 +2363,7 @@ entailment
 entailment
 contradiction
 contradiction
+neutral
 neutral
 neutral
 neutral
@@ -2344,10 +2388,12 @@ contradiction
 neutral
 neutral
 neutral
+neutral
 entailment
 entailment
 contradiction
 contradiction
+neutral
 neutral
 contradiction
 neutral
@@ -2355,8 +2401,10 @@ contradiction
 contradiction
 contradiction
 entailment
+neutral
 entailment
 neutral
+neutral
 contradiction
 neutral
 contradiction
@@ -2372,6 +2420,7 @@ entailment
 entailment
 entailment
 entailment
+neutral
 neutral
 entailment
 neutral
@@ -2457,6 +2506,7 @@ contradiction
 neutral
 entailment
 contradiction
+neutral
 entailment
 neutral
 contradiction
@@ -2583,6 +2633,7 @@ neutral
 entailment
 contradiction
 entailment
+neutral
 entailment
 contradiction
 entailment
@@ -2605,6 +2656,7 @@ neutral
 neutral
 neutral
 contradiction
+neutral
 neutral
 entailment
 entailment
@@ -2771,6 +2823,7 @@ entailment
 contradiction
 entailment
 neutral
+neutral
 entailment
 entailment
 entailment
@@ -2787,6 +2840,7 @@ entailment
 entailment
 entailment
 entailment
+neutral
 contradiction
 contradiction
 neutral
@@ -2817,6 +2871,7 @@ entailment
 contradiction
 neutral
 contradiction
+neutral
 neutral
 neutral
 neutral
@@ -2875,6 +2930,7 @@ entailment
 contradiction
 entailment
 entailment
+neutral
 contradiction
 contradiction
 entailment
@@ -2889,6 +2945,7 @@ entailment
 entailment
 neutral
 entailment
+neutral
 entailment
 contradiction
 neutral
@@ -2901,6 +2958,7 @@ contradiction
 entailment
 entailment
 neutral
+neutral
 contradiction
 entailment
 entailment
@@ -3055,6 +3113,7 @@ contradiction
 entailment
 entailment
 contradiction
+neutral
 contradiction
 contradiction
 neutral
@@ -3091,6 +3150,7 @@ entailment
 neutral
 neutral
 entailment
+neutral
 contradiction
 contradiction
 contradiction
@@ -3102,6 +3162,7 @@ neutral
 neutral
 neutral
 neutral
+neutral
 contradiction
 contradiction
 contradiction
@@ -3125,6 +3186,7 @@ entailment
 neutral
 entailment
 neutral
+neutral
 contradiction
 neutral
 contradiction
@@ -3149,6 +3211,7 @@ entailment
 neutral
 entailment
 entailment
+neutral
 entailment
 entailment
 entailment
@@ -3345,11 +3408,13 @@ entailment
 entailment
 contradiction
 contradiction
+neutral
 contradiction
 neutral
 contradiction
 neutral
 contradiction
+neutral
 contradiction
 entailment
 contradiction
@@ -3435,6 +3500,7 @@ neutral
 entailment
 entailment
 contradiction
+neutral
 neutral
 contradiction
 neutral
@@ -3488,6 +3554,7 @@ neutral
 entailment
 contradiction
 neutral
+neutral
 entailment
 neutral
 entailment
@@ -3569,12 +3636,14 @@ entailment
 entailment
 entailment
 contradiction
+neutral
 neutral
 contradiction
 entailment
 contradiction
 neutral
 neutral
+neutral
 entailment
 contradiction
 contradiction
@@ -3683,6 +3752,7 @@ neutral
 contradiction
 entailment
 entailment
+neutral
 contradiction
 neutral
 contradiction
@@ -3714,6 +3784,7 @@ entailment
 contradiction
 contradiction
 contradiction
+neutral
 contradiction
 contradiction
 entailment
@@ -3825,6 +3896,7 @@ neutral
 entailment
 neutral
 neutral
+neutral
 entailment
 entailment
 neutral
@@ -3887,6 +3959,7 @@ neutral
 entailment
 entailment
 neutral
+neutral
 contradiction
 entailment
 entailment
@@ -4013,6 +4086,7 @@ entailment
 entailment
 neutral
 contradiction
+neutral
 entailment
 entailment
 entailment
@@ -4046,6 +4120,7 @@ neutral
 neutral
 neutral
 contradiction
+neutral
 contradiction
 contradiction
 contradiction
@@ -4054,6 +4129,7 @@ entailment
 neutral
 neutral
 neutral
+neutral
 contradiction
 entailment
 entailment
@@ -4111,6 +4187,7 @@ entailment
 neutral
 neutral
 entailment
+neutral
 neutral
 neutral
 neutral
@@ -4139,11 +4216,13 @@ entailment
 entailment
 contradiction
 entailment
+neutral
 contradiction
 contradiction
 neutral
 neutral
 contradiction
+neutral
 neutral
 entailment
 entailment
@@ -4224,6 +4303,7 @@ contradiction
 contradiction
 entailment
 contradiction
+neutral
 entailment
 entailment
 neutral
@@ -4246,6 +4326,7 @@ contradiction
 entailment
 neutral
 neutral
+neutral
 contradiction
 neutral
 contradiction
@@ -4266,6 +4347,7 @@ neutral
 neutral
 entailment
 contradiction
+neutral
 neutral
 contradiction
 entailment
@@ -4358,6 +4440,7 @@ neutral
 neutral
 neutral
 neutral
+neutral
 contradiction
 entailment
 neutral
@@ -4595,6 +4678,7 @@ contradiction
 contradiction
 neutral
 contradiction
+neutral
 entailment
 entailment
 contradiction
@@ -4681,10 +4765,12 @@ contradiction
 contradiction
 entailment
 entailment
+neutral
 entailment
 entailment
 entailment
 contradiction
+neutral
 contradiction
 entailment
 entailment
@@ -4738,6 +4824,7 @@ entailment
 entailment
 entailment
 contradiction
+neutral
 entailment
 entailment
 contradiction
@@ -4902,6 +4989,7 @@ neutral
 contradiction
 entailment
 entailment
+neutral
 neutral
 neutral
 entailment
@@ -4918,6 +5006,7 @@ contradiction
 entailment
 entailment
 entailment
+neutral
 entailment
 contradiction
 entailment
@@ -5083,6 +5172,7 @@ entailment
 entailment
 neutral
 contradiction
+neutral
 neutral
 neutral
 neutral
@@ -5289,6 +5379,7 @@ neutral
 contradiction
 entailment
 neutral
+neutral
 contradiction
 contradiction
 entailment
@@ -5359,6 +5450,7 @@ contradiction
 neutral
 neutral
 neutral
+neutral
 entailment
 entailment
 entailment
@@ -5393,10 +5485,12 @@ neutral
 entailment
 entailment
 contradiction
+neutral
 contradiction
 neutral
 entailment
 entailment
+neutral
 entailment
 neutral
 entailment
@@ -5408,6 +5502,7 @@ contradiction
 neutral
 neutral
 entailment
+neutral
 entailment
 contradiction
 contradiction
@@ -5483,6 +5578,7 @@ entailment
 entailment
 entailment
 contradiction
+neutral
 entailment
 neutral
 entailment
@@ -5679,6 +5775,7 @@ neutral
 neutral
 entailment
 entailment
+neutral
 contradiction
 contradiction
 entailment
@@ -5703,6 +5800,7 @@ entailment
 entailment
 entailment
 entailment
+neutral
 entailment
 entailment
 entailment
@@ -5710,6 +5808,7 @@ neutral
 neutral
 neutral
 entailment
+neutral
 neutral
 entailment
 contradiction
@@ -5776,6 +5875,7 @@ contradiction
 entailment
 entailment
 contradiction
+neutral
 contradiction
 neutral
 neutral
@@ -5816,6 +5916,7 @@ neutral
 entailment
 contradiction
 entailment
+neutral
 contradiction
 neutral
 contradiction
@@ -5828,6 +5929,7 @@ entailment
 neutral
 entailment
 neutral
+neutral
 contradiction
 neutral
 contradiction
@@ -5900,6 +6002,7 @@ entailment
 entailment
 neutral
 neutral
+neutral
 entailment
 neutral
 neutral
@@ -5935,9 +6038,11 @@ contradiction
 contradiction
 contradiction
 contradiction
+neutral
 contradiction
 neutral
 entailment
+neutral
 contradiction
 contradiction
 neutral
@@ -6002,6 +6107,7 @@ contradiction
 contradiction
 entailment
 neutral
+neutral
 entailment
 contradiction
 neutral
@@ -6021,11 +6127,13 @@ contradiction
 neutral
 entailment
 entailment
+neutral
 entailment
 contradiction
 entailment
 neutral
 neutral
+neutral
 entailment
 contradiction
 neutral
@@ -6104,6 +6212,7 @@ entailment
 entailment
 contradiction
 contradiction
+neutral
 contradiction
 neutral
 entailment
@@ -6119,6 +6228,7 @@ entailment
 neutral
 contradiction
 entailment
+neutral
 entailment
 contradiction
 entailment
@@ -6129,6 +6239,7 @@ entailment
 neutral
 contradiction
 entailment
+neutral
 entailment
 contradiction
 contradiction
@@ -6307,10 +6418,12 @@ entailment
 entailment
 contradiction
 entailment
+neutral
 neutral
 neutral
 neutral
 neutral
+neutral
 entailment
 contradiction
 contradiction
@@ -6392,6 +6505,7 @@ contradiction
 neutral
 contradiction
 neutral
+neutral
 entailment
 neutral
 contradiction
@@ -6502,6 +6616,7 @@ contradiction
 entailment
 neutral
 entailment
+neutral
 neutral
 entailment
 contradiction
@@ -6525,6 +6640,7 @@ contradiction
 entailment
 entailment
 contradiction
+neutral
 contradiction
 contradiction
 entailment
@@ -6535,6 +6651,7 @@ entailment
 contradiction
 neutral
 neutral
+neutral
 entailment
 entailment
 contradiction
@@ -6601,6 +6718,7 @@ contradiction
 neutral
 entailment
 contradiction
+neutral
 neutral
 contradiction
 entailment
@@ -6938,6 +7056,7 @@ neutral
 entailment
 entailment
 entailment
+neutral
 entailment
 entailment
 neutral
@@ -6959,6 +7078,7 @@ neutral
 entailment
 neutral
 entailment
+neutral
 entailment
 entailment
 neutral
@@ -6985,6 +7105,7 @@ entailment
 contradiction
 contradiction
 contradiction
+neutral
 neutral
 entailment
 entailment
@@ -7009,13 +7130,16 @@ entailment
 neutral
 entailment
 contradiction
+neutral
 entailment
 contradiction
 entailment
+neutral
 contradiction
 entailment
 entailment
 entailment
+neutral
 entailment
 neutral
 neutral
@@ -7087,12 +7211,14 @@ entailment
 entailment
 neutral
 neutral
+neutral
 entailment
 contradiction
 contradiction
 neutral
 contradiction
 entailment
+neutral
 contradiction
 contradiction
 entailment
@@ -7109,6 +7235,7 @@ entailment
 entailment
 entailment
 neutral
+neutral
 contradiction
 entailment
 contradiction
@@ -7132,6 +7259,7 @@ contradiction
 entailment
 entailment
 neutral
+neutral
 entailment
 entailment
 entailment
@@ -7159,6 +7287,7 @@ entailment
 entailment
 contradiction
 contradiction
+neutral
 entailment
 neutral
 entailment
@@ -7187,6 +7316,7 @@ entailment
 neutral
 neutral
 neutral
+neutral
 contradiction
 contradiction
 neutral
@@ -7335,6 +7465,7 @@ entailment
 contradiction
 entailment
 neutral
+neutral
 contradiction
 neutral
 entailment
@@ -7348,10 +7479,12 @@ entailment
 neutral
 neutral
 contradiction
+neutral
 neutral
 neutral
 entailment
 neutral
+neutral
 contradiction
 entailment
 entailment
@@ -7441,6 +7574,7 @@ entailment
 contradiction
 entailment
 contradiction
+neutral
 entailment
 neutral
 neutral
@@ -7492,6 +7626,7 @@ entailment
 neutral
 contradiction
 contradiction
+neutral
 contradiction
 entailment
 entailment
@@ -7531,6 +7666,7 @@ contradiction
 contradiction
 neutral
 neutral
+neutral
 contradiction
 entailment
 neutral
@@ -7601,6 +7737,7 @@ entailment
 entailment
 neutral
 entailment
+neutral
 neutral
 neutral
 contradiction
@@ -7687,9 +7824,11 @@ neutral
 neutral
 entailment
 entailment
+neutral
 contradiction
 entailment
 contradiction
+neutral
 contradiction
 neutral
 entailment
@@ -7724,6 +7863,7 @@ neutral
 entailment
 contradiction
 entailment
+neutral
 contradiction
 contradiction
 neutral
@@ -7779,6 +7919,7 @@ neutral
 entailment
 neutral
 neutral
+neutral
 entailment
 entailment
 entailment
@@ -7841,6 +7982,7 @@ entailment
 entailment
 entailment
 neutral
+neutral
 entailment
 neutral
 contradiction
@@ -7884,6 +8026,7 @@ neutral
 contradiction
 entailment
 contradiction
+neutral
 neutral
 entailment
 contradiction
@@ -7899,6 +8042,7 @@ contradiction
 contradiction
 entailment
 neutral
+neutral
 entailment
 contradiction
 entailment
@@ -7923,6 +8067,7 @@ contradiction
 contradiction
 contradiction
 entailment
+neutral
 entailment
 contradiction
 contradiction
@@ -7987,6 +8132,7 @@ contradiction
 entailment
 neutral
 entailment
+neutral
 contradiction
 entailment
 entailment
@@ -8007,6 +8153,7 @@ entailment
 neutral
 neutral
 neutral
+neutral
 entailment
 neutral
 neutral
@@ -8083,6 +8230,7 @@ contradiction
 neutral
 contradiction
 entailment
+neutral
 neutral
 neutral
 neutral
@@ -8233,6 +8381,7 @@ contradiction
 entailment
 entailment
 neutral
+neutral
 entailment
 entailment
 contradiction
@@ -8243,6 +8392,7 @@ neutral
 contradiction
 neutral
 neutral
+neutral
 entailment
 entailment
 contradiction
@@ -8300,6 +8450,7 @@ contradiction
 neutral
 entailment
 contradiction
+neutral
 contradiction
 neutral
 entailment
@@ -8355,6 +8506,7 @@ entailment
 neutral
 entailment
 entailment
+neutral
 contradiction
 entailment
 neutral
@@ -8415,6 +8567,7 @@ neutral
 neutral
 neutral
 contradiction
+neutral
 entailment
 neutral
 entailment
@@ -8443,6 +8596,7 @@ entailment
 neutral
 entailment
 contradiction
+neutral
 neutral
 entailment
 contradiction
@@ -8458,6 +8612,7 @@ entailment
 contradiction
 entailment
 contradiction
+neutral
 entailment
 contradiction
 neutral
@@ -8483,6 +8638,7 @@ neutral
 entailment
 entailment
 contradiction
+neutral
 neutral
 contradiction
 neutral
@@ -8707,6 +8863,7 @@ neutral
 neutral
 contradiction
 contradiction
+neutral
 contradiction
 entailment
 neutral
@@ -8728,6 +8885,7 @@ entailment
 neutral
 entailment
 neutral
+neutral
 entailment
 neutral
 entailment
@@ -8787,6 +8945,7 @@ contradiction
 entailment
 neutral
 entailment
+neutral
 neutral
 contradiction
 entailment
@@ -8870,6 +9029,7 @@ contradiction
 contradiction
 entailment
 neutral
+neutral
 entailment
 entailment
 entailment
@@ -8886,7 +9046,9 @@ neutral
 entailment
 entailment
 neutral
+neutral
 contradiction
+neutral
 neutral
 neutral
 neutral
@@ -8902,6 +9064,7 @@ entailment
 entailment
 contradiction
 neutral
+neutral
 entailment
 neutral
 contradiction
@@ -8960,6 +9123,7 @@ contradiction
 entailment
 neutral
 neutral
+neutral
 entailment
 entailment
 neutral
@@ -9105,7 +9269,9 @@ entailment
 contradiction
 contradiction
 contradiction
+neutral
 entailment
+neutral
 contradiction
 neutral
 entailment
@@ -9134,10 +9300,12 @@ contradiction
 neutral
 neutral
 entailment
+neutral
 entailment
 neutral
 neutral
 neutral
+neutral
 contradiction
 neutral
 contradiction
@@ -9341,6 +9509,8 @@ entailment
 neutral
 neutral
 entailment
+neutral
+neutral
 neutral
 contradiction
 neutral
@@ -9396,6 +9566,7 @@ entailment
 neutral
 contradiction
 contradiction
+neutral
 entailment
 contradiction
 neutral
@@ -9417,6 +9588,7 @@ neutral
 entailment
 neutral
 neutral
+neutral
 entailment
 neutral
 neutral
@@ -9437,6 +9609,7 @@ entailment
 contradiction
 neutral
 entailment
+neutral
 neutral
 entailment
 neutral
@@ -9515,6 +9688,7 @@ contradiction
 neutral
 contradiction
 contradiction
+neutral
 entailment
 neutral
 contradiction
@@ -9547,6 +9721,7 @@ entailment
 neutral
 contradiction
 neutral
+neutral
 entailment
 contradiction
 contradiction
@@ -9777,6 +9952,7 @@ entailment
 contradiction
 neutral
 contradiction
+neutral
 neutral
 contradiction
 neutral

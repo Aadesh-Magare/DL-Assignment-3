@@ -191,7 +191,7 @@ def main(repo_path):
     # plt.title("training loss NN")
     # plt.savefig(os.path.join(repo_path, "img/training_loss_nn.jpg"))
     print('Training Complete')
-    save_model(model, repo_path)
+    # save_model(model, repo_path)
     # evaluate(repo_path) 
 
 if __name__ == "__main__":

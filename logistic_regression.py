@@ -46,17 +46,17 @@ def training(data):
 def main(repo_path):
     train, dev, test = dataset.load_data(repo_path)
     clf = training(train)
-    xd, yd = dataset.prepare_dataset(dev)
+    xd, yd, extra = dataset.prepare_dataset(dev)
     preds = clf.predict(xd)
     print('Dev Acc:', np.mean(preds == yd))
 
-    xt, yt = dataset.prepare_dataset(test, remove_no_labels=True)
+    xt, yt, extra = dataset.prepare_dataset(test, remove_no_labels=True)
     preds = clf.predict(xt)
     print('Test Acc:', np.mean(preds == yt))
 
     save_model(clf, repo_path)
 
-    plot_confusion_matrix(yt, preds, repo_path)
+    # plot_confusion_matrix(yt, preds, repo_path)
 
 def save_model(model, repo_path):
     with open(os.path.join(repo_path, 'models/model_lr.pickl'), 'wb') as f:

@@ -36,7 +36,7 @@ def training(data):
             ])
 
     # clf = GridSearchCV(clf, parameters, n_jobs=-1)
-    x, y = dataset.prepare_dataset(data)
+    x, y, extra = dataset.prepare_dataset(data)
     clf = clf.fit(x, y)
     # print(clf.best_score_)
     # print(clf.best_params_)
